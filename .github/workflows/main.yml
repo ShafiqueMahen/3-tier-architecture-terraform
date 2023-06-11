@@ -1,38 +1,28 @@
-# GitHub Actions Workflow for CD of Terraform Infrastructure 
+# GitHub Actions Workflow for CD of Terraform Infrastructure
 
 name: Deploy 3-Tier Architecture using Terraform
 
-
 on:
-
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-
   workflow_dispatch:
-  
+
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: us-east-1
 
-
 jobs:
-
   terraform:
-
     runs-on: ubuntu-latest
-
-
     steps:
-
       - name: Checkout Repo
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       
       - name: Setup Terraform
-      - uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@v1
       
       - name: Initialise Terraform
         run: terraform init
@@ -48,4 +38,4 @@ jobs:
 
       - name: Destroy infrastructure
         run: terraform destroy -auto-approve
-      
+

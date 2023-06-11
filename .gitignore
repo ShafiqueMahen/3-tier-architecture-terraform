@@ -3,4 +3,4 @@
 .terraform.lock.hcl
 private-keys/
 *.pem
-local-exec-output-files/
+local-exec-output-files/*

@@ -3,3 +3,4 @@
 .terraform.lock.hcl
 private-keys/
 *.pem
+secrets.tfvars

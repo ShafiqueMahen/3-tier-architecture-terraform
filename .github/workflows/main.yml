@@ -31,11 +31,11 @@ jobs:
         run: terraform validate
       
       - name: Plan Terraform changes
-        run: terraform plan -out=tfplan
+        run: terraform plan -var "db_password=${{ secrets.DB_PASSWORD }}" -out=tfplan
 
       - name: Apply Terraform changes
-        run: terraform apply -auto-approve tfplan
+        run: terraform apply -var "db_password=${{ secrets.DB_PASSWORD }}" -auto-approve tfplan
 
       - name: Destroy infrastructure
-        run: terraform destroy -auto-approve
+        run: terraform destroy -var "db_password=${{ secrets.DB_PASSWORD }}" -auto-approve
 

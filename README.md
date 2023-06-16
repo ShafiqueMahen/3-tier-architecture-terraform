@@ -1,8 +1,9 @@
 # Creating a 3-Tier Architecture on Terraform 
 
 ## Architecture Diagram
-
+<p align="center">
 <img width="600" alt="3-Tier Architecture Diagram" src="https://github.com/ShafiqueMahen/3-tier-architecture-terraform/assets/128451228/314e99cb-6108-4b29-a662-b98220736358">
+</p>
 
 ## Prerequisites
 
